@@ -9,7 +9,6 @@
 package com.web.player.action.user;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,8 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.web.player.dao.jdbc.UserDao;
 import com.web.player.model.User;
+import com.web.player.service.user.UserService;
 import com.web.player.util.playerUtils;
 
 /**
@@ -56,7 +55,8 @@ public class RegisterAction extends HttpServlet {
 		String userName = req.getParameter("userName");
 		String loginName = req.getParameter("loginName");
 		String password = req.getParameter("password");
-		Integer sex = Integer.parseInt(req.getParameter("sex"));
+		String sexStr = req.getParameter("sex");
+		Integer sex = Integer.parseInt(sexStr == null ? "0" : sexStr);
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
 		String photoUrl = req.getParameter("photoUrl");
@@ -70,8 +70,9 @@ public class RegisterAction extends HttpServlet {
 		user.setPhone(phone);
 		user.setPhoto(photoUrl);
 		
-		UserDao userDao = new UserDao();
-		boolean isSuccess = true;
+		UserService userService = new UserService();
+		boolean isSuccess = userService.insert(user);
+		/*boolean isSuccess = true;
 		try {
 			isSuccess = userDao.insert(user);
 		} catch (ClassNotFoundException e) {
@@ -80,7 +81,7 @@ public class RegisterAction extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		if(isSuccess) {
 			req.setAttribute("isSuccess", isSuccess?"true":"false");
 		}

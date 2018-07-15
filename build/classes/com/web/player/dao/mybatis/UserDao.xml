@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!-- <mapper namespace="com.web.player.dao.mybatis.UserDao">
-    <insert id=""></insert>
-</mapper> -->
+<mapper namespace="com.web.player.dao.mybatis.UserDao">
+    <insert id="insert" parameterType="com.web.player.model.User">
+        INSERT INTO user VALUES (NULL, #{userName}, #{loginName}, #{password}, #{sex}, #{email}, #{phone}, #{photo}, 2, 0, #{createdBy}, NOW(), #{modifiedBy}, NOW())
+    </insert>
+</mapper>

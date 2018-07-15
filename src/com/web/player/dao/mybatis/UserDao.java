@@ -20,5 +20,5 @@ import com.web.player.model.User;
  */
 public interface UserDao {
 	
-	public boolean insert(User user);
+	public int insert(User user);
 }

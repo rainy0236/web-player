@@ -7,13 +7,13 @@
             <transactionManager type="JDBC"></transactionManager>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/first?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true"/>
-                <property name="userName" value="yuanyi"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/first?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=true"/>
+                <property name="username" value="yuanyi"/>
                 <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
     <mappers>
-        <mapper resource="com.web.player.dao.mybatis.UserDao.xml"/>
+        <mapper resource="com/web/player/dao/mybatis/UserDao.xml"/>
     </mappers>
 </configuration>
