@@ -22,7 +22,7 @@
      <true/>
      <key>url</key>
      <!-- http或者https链接的图片地址，可直接使用app对应的icon（分辨率没强制要求） -->
-     <string>https://ad.infoxgame.com/YinHuOA-H5/images/logo_im.png</string>
+     <string>https://pic.cnblogs.com/face/1158567/20170713101342.png</string>
     </dict>
     <dict>
      <key>kind</key>
@@ -31,7 +31,7 @@
      <true/>
      <key>url</key>
      <!-- http或者https链接的小图片地址，可直接使用app对应的icon（分辨率没强制要求） -->
-     <string>https://ad.infoxgame.com/YinHuOA-H5/images/logo_im.png</string>
+     <string>https://pic.cnblogs.com/face/1158567/20170713101342.png</string>
     </dict>
    </array>
    <key>metadata</key>
